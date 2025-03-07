@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ShopPage extends StatefulWidget {
+   
   const ShopPage({super.key});
 
   @override
@@ -15,8 +16,16 @@ class _ShopPageState extends State<ShopPage> {
        drawer: Drawer( 
          child: ListView(
           children: [
+            DrawerHeader(
+              child: Image.asset('lib/images/Nike.png'),) , 
             ListTile( 
-               
+                leading: Icon(Icons.home),
+                title: Text("Home"),
+            ) ,
+
+            ListTile(
+              leading: Icon(Icons.shopping_cart),
+              title: Text("About"),
             )
           ],
          ),
@@ -25,6 +34,8 @@ class _ShopPageState extends State<ShopPage> {
         child: Column(
           children: [
             // that hard thingy 
+
+            Text("Hot Picks"), 
 
           ],
         ),),
