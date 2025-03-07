@@ -10,6 +10,25 @@ class ShopPage extends StatefulWidget {
 class _ShopPageState extends State<ShopPage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+       backgroundColor: Colors.grey ,
+       drawer: Drawer( 
+         child: ListView(
+          children: [
+            ListTile( 
+               
+            )
+          ],
+         ),
+       ),
+        body: Padding(padding: EdgeInsets.only(top: 100 , bottom: 100 , right: 20 , left: 20),
+        child: Column(
+          children: [
+            // that hard thingy 
+
+          ],
+        ),),
+          
+    );
   }
 }
