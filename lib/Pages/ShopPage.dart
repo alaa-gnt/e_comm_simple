@@ -72,9 +72,37 @@ class _ShopPageState extends State<ShopPage> {
         ),
       ),
       body: Padding(
-        padding: EdgeInsets.only(top: 100, bottom: 100, right: 20, left: 20),
+        padding: EdgeInsets.only(top: 20, bottom: 100, right: 20, left: 20),
         child: Column(
           children: [
+            Container( 
+              height: 40,
+              width: 350, 
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(5), 
+              color: Colors.white,
+            ),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: 
+                Padding(
+                  padding: const EdgeInsets.only(left: 10 , right: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween ,
+                    children: [
+                       Text("Search" , style: TextStyle(
+                  fontSize: 15 ,
+                  fontWeight: FontWeight.bold ,
+                  color: Colors.grey[700]
+                                ),), 
+
+                         Icon(Icons.search , color: Colors.grey[700],) ,      
+                    ],
+                  )
+                  
+                ),)
+               
+            ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Align(
