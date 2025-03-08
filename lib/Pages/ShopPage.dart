@@ -2,7 +2,31 @@ import 'package:flutter/material.dart';
 import 'package:e_comm_simple/componantes/Item.dart';
 
 class ShopPage extends StatefulWidget {
-  const ShopPage({super.key});
+   ShopPage({super.key});
+
+final List<Item> items = [ 
+                  Item(
+                    name: "Nike",
+                    image: "lib/images/image.png",
+                    discription: "The Nike Air Max 90 stays true to its OG .",
+                    price: 120.0,
+                  ),
+                  
+                  Item(
+                    name: "Nike Air Max 97",
+                    image: "lib/images/airmax97.jpg",
+                    discription: "The Nike Air Max 97 keeps a sneaker icon going strong with the same design details that made it famous: water-ripple lines, reflective piping and full-length Max Air cushioning.",
+                    price: 170.0,
+                  ),
+                  
+                  Item(
+                    name: "Nike Air Max 270",
+                    image: "lib/images/airmax270.jpg",
+                    discription: "The Nike Air Max 270 delivers visible cushioning under every step. Updated for modern comfort, it pays homage to the original 1991 Air Max 180 with an exaggerated tongue top and heritage logo.",
+                    price: 150.0,
+                  ),
+] ;
+
 
   @override
   State<ShopPage> createState() => _ShopPageState();
@@ -64,31 +88,17 @@ class _ShopPageState extends State<ShopPage> {
               ),
             ) , 
             Expanded( // 🔥 Wrap ListView in Expanded to avoid layout issues
-              child: ListView(
+              child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                children: [
-                  Item(
-                    name: "Nike",
-                    image: "lib/images/image.png",
-                    discription: "The Nike Air Max 90 stays true to its OG .",
-                    price: 120.0,
-                  ),
-                  SizedBox(width: 20),
-                  Item(
-                    name: "Nike Air Max 97",
-                    image: "lib/images/airmax97.jpg",
-                    discription: "The Nike Air Max 97 keeps a sneaker icon going strong with the same design details that made it famous: water-ripple lines, reflective piping and full-length Max Air cushioning.",
-                    price: 170.0,
-                  ),
-                  SizedBox(width: 20),
-                  Item(
-                    name: "Nike Air Max 270",
-                    image: "lib/images/airmax270.jpg",
-                    discription: "The Nike Air Max 270 delivers visible cushioning under every step. Updated for modern comfort, it pays homage to the original 1991 Air Max 180 with an exaggerated tongue top and heritage logo.",
-                    price: 150.0,
-                  ),
-                ],
-              ),
+                itemCount: widget.items.length,
+                itemBuilder: (context , index) { 
+                  return Row(
+                    children: [
+                      widget.items[index] ,
+                      SizedBox(width: 20,)
+                    ],
+                  );
+                })
             ),
           ],
         ),
