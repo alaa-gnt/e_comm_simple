@@ -16,28 +16,33 @@ class Item extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 500 ,
+      width: 300,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(20),
       ), 
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: [
-              Image.asset(image) ,
-               
-              Text(discription , style: 
-              TextStyle(color: Colors.grey),) ,
-        
-              SizedBox(height: 10,) ,
-        
-              Text(name , style: TextStyle(
-                color: Colors.black , 
-                fontWeight: FontWeight.bold ,
-              ),) , 
-        
-              Text(price.toString()) ,
-        ],     
+        padding: const EdgeInsets.all(30.0),
+        child: Center(
+          child: Column( 
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+                Image.asset(image , height: 100,) ,
+                 
+                Text(discription , style: 
+             TextStyle(color: Colors.grey),) ,
+          
+                SizedBox(height: 10,) ,
+          
+                Text(name , style: TextStyle(
+                  color: Colors.black , 
+                  fontWeight: FontWeight.bold ,
+                ),) , 
+          
+                Text(price.toString()) ,
+          ],     
+          ),
         ),
       ),
     );
