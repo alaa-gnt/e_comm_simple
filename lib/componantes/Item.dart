@@ -20,13 +20,25 @@ class Item extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.circular(20),
       ), 
-      child: Column(
-        children: [
-            Image.asset(image) , 
-            Text(discription) , 
-            Text(name) , 
-            Text(price.toString()) ,
-      ],     
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+              Image.asset(image) ,
+               
+              Text(discription , style: 
+              TextStyle(color: Colors.grey),) ,
+        
+              SizedBox(height: 10,) ,
+        
+              Text(name , style: TextStyle(
+                color: Colors.black , 
+                fontWeight: FontWeight.bold ,
+              ),) , 
+        
+              Text(price.toString()) ,
+        ],     
+        ),
       ),
     );
   }
